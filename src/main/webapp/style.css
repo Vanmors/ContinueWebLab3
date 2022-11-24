@@ -1,0 +1,26 @@
+#canvas {
+    margin: 25px 600px;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #515151;
+    background: #dddddd;
+}
+*:not(#form){
+    font-family: serif;
+    color: #ffe8e8;
+    /*color: ;*/
+    /*background-color: #FF66FF;*/
+    background-color: #1f1f1f;
+    /*background-color: #dddddd;*/
+    /*background-image: url("BackgroundCode.jpg");*/
+}
+.name {
+    font-family: serif;
+    margin: 0px 550px;
+    /*color: green;*/
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    /*line-height: 40px;*/
+}
