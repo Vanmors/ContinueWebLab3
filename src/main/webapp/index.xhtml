@@ -11,34 +11,33 @@
 <f:view>
   <h:head>
     <title>JSF Title</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="newCSS.css"/>
   </h:head>
 
   <h:body>
+    <div class="name">
+      Мориков Иван Дмитриевич P32121(P3117) №212113
+      <h:graphicImage id="utka" value="vt_logo.png" width="100" height="100"/>
+      <h:graphicImage id="kasperskiy" value="kasperskyTrus.gif" width="100" height="20"/>
+    </div>
     <canvas style="background-color: #dddddd " width="500" height="500" id="canvas"/>
-    <h:panelGrid title="JSF panelGrid Title" border="2" columns="2">
-
-      <h:outputLabel value="Main Page"/>
-      <h:button value="Table" title="Table" outcome="nextPage"/>
-
-    </h:panelGrid>
 
     <br/>
 
     <!-- Без формы компоненты работать не будут -->
     <h:form id="form">
-      <p:panel header="PrimeFaces Components">
-        <p:outputLabel for="inputTextId" value="Введите значение: "/>
+      <p:panel id="panel" header="Ввод координат:">
+        <p:outputLabel for="inputTextId" value="Введите X: "/>
 
-        <p:spinner value="#{xBean.value1}" min="-5" max="5" stepFactor="0.1"/>
+        <p:spinner placeholder="Введите X" id="x-textinput" value="#{xBean.value1}" min="-5" max="5" stepFactor="0.1"/>
         <p/>
-        <p:inputText id="inputTextId" title="Binding with ManagedBean" value="#{xBean.inputText}">
+        <p:inputText placeholder="Введите Y" id="inputTextId" title="Binding with ManagedBean" value="#{xBean.inputText}">
           <f:validateDoubleRange minimum="-3" maximum="5"/>
         </p:inputText>
         <p/>
         <br/>
         <p/>
-        <p:inputText  value="#{xBean.z}">
+        <p:inputText placeholder="Введите R" id="r" value="#{xBean.z}">
           <f:validateDoubleRange minimum="1" maximum="4"/>
         </p:inputText>
         <p/>
@@ -48,11 +47,8 @@
       </p:panel>
     </h:form>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="canvas.js"></script>
-    <script type="text/javascript">
-      $(document).ready(drawGraph());
-    </script>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <script type="text/javascript" src="newCnavas.js"></script>
   </h:body>
 </f:view>
 

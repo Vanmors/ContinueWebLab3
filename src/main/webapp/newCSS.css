@@ -5,6 +5,21 @@
     border: 5px solid #515151;
     background: #dddddd;
 }
+
+#utka {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+
+}
+#panel{
+    background-color: #515151;
+}
+#kasperskiy{
+    position: absolute;
+    left: 20px;
+    top: 120px;
+}
 *:not(#form){
     font-family: serif;
     color: #ffe8e8;
