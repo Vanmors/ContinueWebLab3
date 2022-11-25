@@ -53,6 +53,27 @@ ctx.fillText("-R", 15, 250)
 ctx.stroke(); // Делаем контур
 console.log("I'm ok")
 
+function NULL() {
+    if (document.getElementById('form:inputTextId').value === "" || document.getElementById('form:r').value === "") {
+        swal("Введите все данные!!!", "")
+    }
+}
+
+// Swal.fire({
+//     title: 'hello',
+//     width: 600,
+//     padding: '3em',
+//     color: '#716add',
+//     background: '#fff url(/images/trees.png)',
+//     backdrop: `
+//     rgba(0,0,123,0.4)
+//     url("/images/nyan-cat.gif")
+//     left top
+//     no-repeat
+//   `
+// })
+
+
 function validateXY() {
     let x = document.getElementById("x-textinput").value;
     let y = document.getElementById("inputTextId").value;
@@ -84,13 +105,12 @@ function mathFloor(n) {
 }
 
 function pos(e) {
-    let input = document.getElementById('x-textinput');
-    console.log(input.value)
-
-    const r = $('input[id="r"]:checked').val();
+    //let r = $('input[id="r"]:checked').val();
+    //console.log(r)
+    let r = document.getElementById('form:r').value
     console.log(r)
-    if (r === undefined) {
-        alert("Введите R")
+    if (r === "") {
+        swal("Введите R", "")
     } else {
         let x = e.pageX;
         let y = e.pageY;
@@ -130,8 +150,14 @@ function pos(e) {
 
         resX = mathFloor(resX)
 
-        document.getElementById("inputTextId").value = resY;
-        document.getElementById("x-textinput").value = resX;
+        // $("inputText[id*='inputTextId']").val("1");
+        document.getElementById('form:inputTextId').value = resY;
+        // document.getElementById('form:x-textinput').value = resX;
+        // PrimeFaces.widget['widgetID'].id.value = resX
+        let xxx = document.getElementById('form:x-textinput').value = resX;
+        alert(PF('widgetID').show());
+        // PrimeFaces.widget['widgetID'].value = resX;
+        // $("inputText[id*='list1SortOrder']").val("1");
         validateXY()
 
         // }

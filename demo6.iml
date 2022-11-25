@@ -98,5 +98,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2.external:jakarta.inject:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
+    <orderEntry type="library" name="sweetalert" level="application" />
   </component>
 </module>

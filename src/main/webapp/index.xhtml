@@ -12,6 +12,7 @@
   <h:head>
     <title>JSF Title</title>
     <link rel="stylesheet" href="newCSS.css"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </h:head>
 
   <h:body>
@@ -19,6 +20,7 @@
       Мориков Иван Дмитриевич P32121(P3117) №212113
       <h:graphicImage id="utka" value="vt_logo.png" width="100" height="100"/>
       <h:graphicImage id="kasperskiy" value="kasperskyTrus.gif" width="100" height="20"/>
+
     </div>
     <canvas style="background-color: #dddddd " width="500" height="500" id="canvas"/>
 
@@ -29,8 +31,11 @@
       <p:panel id="panel" header="Ввод координат:">
         <p:outputLabel for="inputTextId" value="Введите X: "/>
 
-        <p:spinner placeholder="Введите X" id="x-textinput" value="#{xBean.value1}" min="-5" max="5" stepFactor="0.1"/>
+        <p:spinner widgetVar="widgetID" placeholder="Введите X" id="x-textinput" value="#{xBean.value1}" min="-5" max="5" stepFactor="0.1"/>
         <p/>
+<!--        <script>-->
+<!--          widgetID.cfg.precision = 2;-->
+<!--        </script>-->
         <p:inputText placeholder="Введите Y" id="inputTextId" title="Binding with ManagedBean" value="#{xBean.inputText}">
           <f:validateDoubleRange minimum="-3" maximum="5"/>
         </p:inputText>
@@ -41,13 +46,17 @@
           <f:validateDoubleRange minimum="1" maximum="4"/>
         </p:inputText>
         <p/>
-        <p:commandButton value="GO to next page" action="#{xBean.verifyUser}"/>
+        <p:commandButton value="Submit" action="#{xBean.verifyUser}" onclick="NULL()"/>
 
 
       </p:panel>
     </h:form>
-
-    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <h:form style="margin: 0 auto; padding: 1%; width: 30%">
+      <h3>Server analog clock</h3>
+      <p:clock displayMode="analog" mode="server" autoSync="true" syncInterval="10000"/>
+      <p:clock displayMode="digital" pattern="dd.MM.yyyy" mode="server" autoSync="true" syncInterval="10000"/>
+    </h:form>
+<!--    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />-->
     <script type="text/javascript" src="newCnavas.js"></script>
   </h:body>
 </f:view>
