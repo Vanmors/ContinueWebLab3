@@ -11,7 +11,7 @@
 <f:view>
   <h:head>
     <title>JSF Title</title>
-    <link rel="stylesheet" href="newCSS.css"/>
+    <link rel="stylesheet" href="NSCC.css"/>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </h:head>
 
@@ -20,7 +20,7 @@
       Мориков Иван Дмитриевич P32121(P3117) №212113
       <h:graphicImage id="utka" value="vt_logo.png" width="100" height="100"/>
       <h:graphicImage id="kasperskiy" value="kasperskyTrus.gif" width="100" height="20"/>
-
+      <h:graphicImage id="clock" value="clock.jpg" width="100" height="100"/>
     </div>
     <canvas style="background-color: #dddddd " width="500" height="500" id="canvas"/>
 
@@ -46,18 +46,18 @@
           <f:validateDoubleRange minimum="1" maximum="4"/>
         </p:inputText>
         <p/>
-        <p:commandButton value="Submit" action="#{xBean.verifyUser}" onclick="NULL()"/>
+        <p:commandButton id = "SbmButton" value="Submit" action="#{xBean.verifyUser}" onclick="NULL()"/>
 
 
       </p:panel>
     </h:form>
-    <h:form style="margin: 0 auto; padding: 1%; width: 30%">
-      <h3>Server analog clock</h3>
-      <p:clock displayMode="analog" mode="server" autoSync="true" syncInterval="10000"/>
-      <p:clock displayMode="digital" pattern="dd.MM.yyyy" mode="server" autoSync="true" syncInterval="10000"/>
-    </h:form>
+<!--    <h:form style="margin: 0 auto; padding: 1%; width: 30%">-->
+<!--      <h3>Server analog clock</h3>-->
+<!--      <p:clock displayMode="analog" mode="server" autoSync="true" syncInterval="10000"/>-->
+<!--      <p:clock displayMode="digital" pattern="dd.MM.yyyy" mode="server" autoSync="true" syncInterval="10000"/>-->
+<!--    </h:form>-->
 <!--    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />-->
-    <script type="text/javascript" src="newCnavas.js"></script>
+    <script type="text/javascript" src="helpMe.js "></script>
   </h:body>
 </f:view>
 

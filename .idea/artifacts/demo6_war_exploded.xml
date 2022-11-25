@@ -32,7 +32,6 @@
           <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8" />
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.faces:2.2.10" />
-          <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.1.7" />
           <element id="library" level="project" name="Maven: org.icefaces:icefaces-ace:4.3.0" />
           <element id="library" level="project" name="Maven: org.icefaces:icefaces:4.3.0" />
           <element id="library" level="project" name="Maven: org.primefaces:primefaces:5.2" />

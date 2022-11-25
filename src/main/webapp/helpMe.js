@@ -158,7 +158,7 @@ function pos(e) {
         // alert(PF('widgetID').show());
         // PrimeFaces.widget['widgetID'].value = resX;
         // $("inputText[id*='list1SortOrder']").val("1");
-        validateXY()
+        // validateXY()
         console.log("gbhfdjskl")
         document.getElementById('form:SbmButton').click()
         // }
