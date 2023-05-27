@@ -3,16 +3,20 @@ package com.example.demo6;
 import com.example.demo6.BD.TableDAO;
 import com.example.demo6.BD.TableDAOImpl;
 import lombok.Data;
+import org.hibernate.Criteria;
+import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
 import org.hibernate.service.spi.InjectService;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 
 @ManagedBean
 @SessionScoped
 @Data
+
 public class XBean {
 
     @Inject

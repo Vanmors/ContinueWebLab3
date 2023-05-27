@@ -85,7 +85,6 @@
     <orderEntry type="library" name="Maven: org.icefaces:icefaces-ace:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.icefaces:icefaces:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.primefaces:primefaces:5.2" level="project" />
-    <orderEntry type="library" name="Maven: org.primefaces.themes:all-themes:1.0.10" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.h2database:h2:2.1.214" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.5.0" level="project" />

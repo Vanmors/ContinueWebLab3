@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "dots")
 public class ResultTable implements Serializable {
 
@@ -44,35 +46,35 @@ public class ResultTable implements Serializable {
         this.hit = hit;
     }
 
-        public Boolean getHit() {
-            return hit;
-        }
-
-        public void setHit(Boolean hit) {
-            this.hit = hit;
-        }
-
-        public Double getR() {
-            return r;
-        }
-
-        public void setR(Double r) {
-            this.r = r;
-        }
-
-        public Double getY() {
-            return y;
-        }
-
-        public void setY(Double y) {
-            this.y = y;
-        }
-
-        public Double getX() {
-            return x;
-        }
-
-        public void setX(Double x) {
-            this.x = x;
-        }
+//        public Boolean getHit() {
+//            return hit;
+//        }
+//
+//        public void setHit(Boolean hit) {
+//            this.hit = hit;
+//        }
+//
+//        public Double getR() {
+//            return r;
+//        }
+//
+//        public void setR(Double r) {
+//            this.r = r;
+//        }
+//
+//        public Double getY() {
+//            return y;
+//        }
+//
+//        public void setY(Double y) {
+//            this.y = y;
+//        }
+//
+//        public Double getX() {
+//            return x;
+//        }
+//
+//        public void setX(Double x) {
+//            this.x = x;
+//        }
     }
