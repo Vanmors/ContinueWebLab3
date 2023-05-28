@@ -18,7 +18,7 @@ public class ResultTable implements Serializable {
 
         //    @GenericGenerator(name="seq" , strategy="increment")
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+//        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
         private int id;
 
@@ -39,7 +39,8 @@ public class ResultTable implements Serializable {
         private boolean hit;
 
 
-    public ResultTable(Double x, Double y, Double r, boolean hit) {
+    public ResultTable(int id, Double x, Double y, Double r, boolean hit) {
+        this.id = id;
         this.x = x;
         this.y = y;
         this.r = r;

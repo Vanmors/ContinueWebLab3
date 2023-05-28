@@ -48,17 +48,20 @@ public class XBean {
         RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
         String jvmName = bean.getName();
         System.out.println("Name = " + jvmName);
-
+        TableDAO tableDAO = new TableDAOImpl();
         long pid = Long.parseLong(jvmName.split("@")[0]);
         System.out.println("PID  = " + pid);
 
         setHit();
-        ResultTable res = new ResultTable(value1, inputText, Z, hit);
+        ResultTable res = new ResultTable(tableDAO.findAll().size() + 1, value1, inputText, Z, hit);
+//        res.setId(tableDAO.findAll().size());
         Result.add(res);
+
 //        ResultTable resultTable = new ResultTable(5.0,5.0,5.0,true);
         try {
-            TableDAO tableDAO = new TableDAOImpl();
+
             tableDAO.save(res);
+
         }
         catch (Throwable t) {
             t.printStackTrace();

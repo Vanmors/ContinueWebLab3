@@ -8,6 +8,9 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class TableDAOImpl implements TableDAO{
@@ -29,7 +32,7 @@ public class TableDAOImpl implements TableDAO{
 
     @Override
     public ResultTable findById(int id) {
-        return null;
+        return ConnectToDB.getSessionFactory().openSession().get(ResultTable.class, id);
     }
 
     @Override
@@ -48,8 +51,21 @@ public class TableDAOImpl implements TableDAO{
 
     @Override
     public List<ResultTable> findAll() {
-        return null;
+//        return ConnectToDB.getSessionFactory().openSession().createQuery("SELECT a FROM dots a", ResultTable.class).getResultList();
+        CriteriaBuilder cb = ConnectToDB.getSessionFactory().openSession().getCriteriaBuilder();
+        CriteriaQuery<ResultTable> cq = cb.createQuery(ResultTable.class);
+        Root<ResultTable> rootEntry = cq.from(ResultTable.class);
+        CriteriaQuery<ResultTable> all = cq.select(rootEntry);
+
+        TypedQuery<ResultTable> allQuery = ConnectToDB.getSessionFactory().openSession().createQuery(all);
+        return allQuery.getResultList();
     }
+
+
+    
+//    public int countOfPoints(){
+//        return ConnectToDB.getSessionFactory().openSession().createQuery("select count all from dots");
+//    }
 
 //    @Override
 //    public int findAll() {
@@ -60,10 +76,7 @@ public class TableDAOImpl implements TableDAO{
 ////        session.close();
 //    }
 
-//    @Override
-//    public ResultTable findById(int id) {
-//        return ConnectToDB.getSessionFactory().openSession().get(ResultTable.class, id);
-//    }
+
 //    @Override
 //    public void save(ResultTable resultTable) {
 //        Session session = ConnectToDB.getSessionFactory().openSession();
