@@ -106,6 +106,12 @@
                 </h:column>
             </h:dataTable>
             <p:commandButton id="reload" value="Go back" onclick="Rel()"/>
+            <p>Число попыток:
+                <h:outputText value="#{pointCount.total} "/>
+            </p>
+            <p>Число пыток:
+                <h:outputText value="#{pointCount.hits}"/>
+            </p>
         </h:form>
         <script type="text/javascript" src="Reload.js" >
         </script>

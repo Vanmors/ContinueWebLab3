@@ -58,11 +58,11 @@
             <version>5.2</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.primefaces.themes</groupId>-->
-<!--            <artifactId>all-themes</artifactId>-->
-<!--            <version>1.0.10</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -112,13 +112,13 @@
         </dependency>
     </dependencies>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-war-plugin</artifactId>-->
-<!--                <version>3.3.1</version>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

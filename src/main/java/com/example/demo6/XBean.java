@@ -6,17 +6,18 @@ import lombok.Data;
 import org.hibernate.Criteria;
 import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
 import org.hibernate.service.spi.InjectService;
-
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder;
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 
 @ManagedBean
 @SessionScoped
 @Data
-
 public class XBean {
 
     @Inject
@@ -25,34 +26,6 @@ public class XBean {
     private Double inputText;
     private boolean hit = false;
 
-//    public String getInputText() {
-//        return inputText;
-//    }
-//
-//    public void setInputText(String inputText) {
-//        this.inputText = inputText;
-//    }
-//
-//
-//    public String getZ() {
-//        return Z;
-//    }
-//
-//    public void setZ(String Z) {
-//        this.Z = Z;
-//    }
-//
-//    public double getValue1() {
-//        return value1;
-//    }
-//
-//    public void setValue1(double value1) {
-//        this.value1 = value1;
-//    }
-
-    //    public boolean getHit(){
-//        return hit;
-//    }
     public void setHit() {
 
         if (((value1 * value1 + inputText * inputText) <= Z * Z && value1 <= 0 && inputText >= 0) ||
@@ -72,6 +45,13 @@ public class XBean {
 
 
     public String verifyUser() throws Throwable {
+        RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
+        String jvmName = bean.getName();
+        System.out.println("Name = " + jvmName);
+
+        long pid = Long.parseLong(jvmName.split("@")[0]);
+        System.out.println("PID  = " + pid);
+
         setHit();
         ResultTable res = new ResultTable(value1, inputText, Z, hit);
         Result.add(res);

@@ -1,6 +1,7 @@
 package com.example.demo6.BD;
 
 import com.example.demo6.ResultTable;
+import com.example.demo6.XBean;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -49,6 +50,15 @@ public class TableDAOImpl implements TableDAO{
     public List<ResultTable> findAll() {
         return null;
     }
+
+//    @Override
+//    public int findAll() {
+//        Session session = ConnectToDB.getSessionFactory().openSession();
+//        Transaction tx1 = session.beginTransaction();
+//        return session.createQuery("SELECT hit FROM dots hit").;
+////        tx1.commit();
+////        session.close();
+//    }
 
 //    @Override
 //    public ResultTable findById(int id) {
