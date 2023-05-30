@@ -2,6 +2,7 @@ package com.example.demo6;
 
 import com.example.demo6.BD.TableDAO;
 import com.example.demo6.BD.TableDAOImpl;
+import com.example.demo6.MBeans.PointCount;
 import lombok.Data;
 import org.hibernate.Criteria;
 import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
@@ -61,7 +62,8 @@ public class XBean {
         try {
 
             tableDAO.save(res);
-
+            PointCount pointCount = new PointCount();
+            pointCount.increment();
         }
         catch (Throwable t) {
             t.printStackTrace();

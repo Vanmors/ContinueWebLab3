@@ -26,8 +26,7 @@ public class Area extends NotificationBroadcasterSupport implements AreaMBean {
         double x = resultTable.getX();
         double y = resultTable.getY();
         double r = resultTable.getR();
-        System.out.println(x);
-        System.out.println(y);
+
         if ((x <= 0 && y <= 0) || r == 0) {
             return 0;
         } else if (x >= 0 && y >= 0) {

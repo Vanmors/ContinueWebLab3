@@ -23,24 +23,44 @@ public class PointCount extends NotificationBroadcasterSupport implements Serial
     private int total = 0;
     private int hits = 0;
     private long sequenceNumber = 0;
-
+    private int lastElementTotal = 0;
+    private int lastElementHits = 0;
     TableDAO tableDAO = new TableDAOImpl();
 
-    public int increment() {
+
+    public void increment() {
         total++;
-        return total;
     }
 
     @Override
     public int getTotal() {
-        sendNotification(new Notification("4 промаха подряд", this.getClass().getName(), sequenceNumber++, "Было совершено 4 промаха подряд"));
-        total++;
+        if (last4Misses()) {
+            sendNotification(new Notification("4 промаха подряд", this.getClass().getName(), sequenceNumber++, "Было совершено 4 промаха подряд"));
+        }
+        if (!(lastElementTotal == tableDAO.findById(tableDAO.findAll().size()).getId())) {
+            lastElementTotal = tableDAO.findById(tableDAO.findAll().size()).getId();
+            total++;
+        }
         return total;
+    }
+
+    public boolean last4Misses() {
+        if (!tableDAO.findById(tableDAO.findAll().size()).isHit()
+                && !tableDAO.findById(tableDAO.findAll().size() - 1).isHit()
+                && !tableDAO.findById(tableDAO.findAll().size() - 2).isHit()
+                && !tableDAO.findById(tableDAO.findAll().size() - 3).isHit()) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     @Override
     public int getHits() {
-        if (tableDAO.findById(tableDAO.findAll().size()).isHit()) {
+        if (tableDAO.findById(tableDAO.findAll().size()).isHit()
+                && !(lastElementHits == tableDAO.findById(tableDAO.findAll().size()).getId())) {
+            lastElementHits = tableDAO.findById(tableDAO.findAll().size()).getId();
             hits++;
         }
         return hits;
