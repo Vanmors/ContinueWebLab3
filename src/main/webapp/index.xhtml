@@ -31,18 +31,18 @@
       <p:panel id="panel" header="Ввод координат:">
         <p:outputLabel for="inputTextId" value="Введите X: "/>
 
-        <p:spinner widgetVar="widgetID" placeholder="Введите X" id="x-textinput" value="#{xBean.value1}" min="-5" max="5" stepFactor="0.1"/>
+        <p:spinner widgetVar="widgetID" placeholder="Введите X" id="x-textinput" value="#{xBean.x}" min="-5" max="5" stepFactor="0.1"/>
         <p/>
 <!--        <script>-->
 <!--          widgetID.cfg.precision = 2;-->
 <!--        </script>-->
-        <p:inputText placeholder="Введите Y" id="inputTextId" title="Binding with ManagedBean" value="#{xBean.inputText}">
+        <p:inputText placeholder="Введите Y" id="inputTextId" title="Binding with ManagedBean" value="#{xBean.y}">
           <f:validateDoubleRange minimum="-3" maximum="5"/>
         </p:inputText>
         <p/>
         <br/>
         <p/>
-        <p:inputText placeholder="Введите R" id="r" value="#{xBean.z}">
+        <p:inputText placeholder="Введите R" id="r" value="#{xBean.r}">
           <f:validateDoubleRange minimum="1" maximum="4"/>
         </p:inputText>
         <p/>

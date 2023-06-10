@@ -4,16 +4,11 @@ import com.example.demo6.BD.TableDAO;
 import com.example.demo6.BD.TableDAOImpl;
 import com.example.demo6.MBeans.PointCount;
 import lombok.Data;
-import org.hibernate.Criteria;
-import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
-import org.hibernate.service.spi.InjectService;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
-import javax.persistence.criteria.CriteriaBuilder;
-import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 
 @ManagedBean
@@ -22,16 +17,16 @@ import java.util.ArrayList;
 public class XBean {
 
     @Inject
-    private double value1;
-    private Double Z;
-    private Double inputText;
+    private double x;
+    private Double r;
+    private Double y;
     private boolean hit = false;
 
     public void setHit() {
 
-        if (((value1 * value1 + inputText * inputText) <= Z * Z && value1 <= 0 && inputText >= 0) ||
-                (inputText + value1 <= Z && value1 >= 0 && inputText <= 0) ||
-                (inputText / 2 >= (value1 - Z / 2) && value1 >= 0 && inputText >= 0)) {
+        if (((x * x + y * y) <= r * r && x <= 0 && y>= 0) ||
+                (y + x <= r && x >= 0 && y <= 0) ||
+                (y / 2 >= (x - r / 2) && x >= 0 && y >= 0)) {
             hit = true;
         } else {
             hit = false;
@@ -54,7 +49,7 @@ public class XBean {
         System.out.println("PID  = " + pid);
 
         setHit();
-        ResultTable res = new ResultTable(tableDAO.findAll().size() + 1, value1, inputText, Z, hit);
+        ResultTable res = new ResultTable(tableDAO.findAll().size() + 1, x, y, r, hit);
 //        res.setId(tableDAO.findAll().size());
         Result.add(res);
 
